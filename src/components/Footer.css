@@ -1,11 +1,15 @@
-.Home{
-    position: absolute;
-    bottom: 0;
-    padding: 10px;
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
+.Home {
+  position: fixed;
+  height: 50px;
+  bottom: 0;
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  background-color: white;
 }
-.img{
-    filter: opacity(0.5) drop-shadow(0 0 0 #228b22);
+
+.img {
+  filter: opacity(0.5) drop-shadow(0 0 0 #228b22);
 }
