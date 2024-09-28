@@ -57,7 +57,7 @@ const ExpBar = styled.div`
   height: 19px;
   border-radius: 30px;
   background-color: #ffffff;
-  margin-right: 2px;
+  margin-right: 10px;
   position: relative;
 `;
 
