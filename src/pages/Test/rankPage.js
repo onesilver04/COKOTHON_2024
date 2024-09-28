@@ -9,7 +9,7 @@ import Header from "../../components/Header";
 const RankPage = () => {
   return (
     <>
-      <Header title="Ranking" />
+      <Header title="Ranking" url="/main" />
       <div className="outer-container">
         <div className="ranking-image">
           <Trophy />

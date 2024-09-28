@@ -56,7 +56,7 @@ const Line = styled.div`
 const EmailGameResult = () => {
   return (
     <div>
-      <Header title="메일보내기 게임" />
+      <Header title="메일보내기 게임" url="/email" />
       <MainContainer>
         <Text>당신의 메일 점수는?</Text>
         <Score>65 점</Score>

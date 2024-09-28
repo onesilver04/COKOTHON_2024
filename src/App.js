@@ -11,6 +11,8 @@ import LoginSecond from "./pages/Login/loginSecond";
 import EmailGame from "./pages/EmailGame/EmailGame";
 import EmailGameResult from "./pages/EmailGame/EmailGameResult";
 import Register from "./pages/register";
+import WordQuiz from "./pages/WordQuiz/WordQuiz";
+import EmailStart from "./pages/EmailGame/EmailStart";
 
 const App = () => {
   return (
@@ -21,6 +23,7 @@ const App = () => {
           <Route path="/rank" element={<RankPage />} />
           <Route path="/note" element={<NoteCard />} />
           <Route path="/mypage" element={<Mypage />} />
+          <Route path="/quiz" element={<WordQuiz />} />
           <Route path="/main" element={<Main />} />
           <Route path="/" element={<SplashScreen />} />
           <Route path="/login" element={<Login />} />
@@ -28,6 +31,7 @@ const App = () => {
           <Route path="/email" element={<EmailGame />} />
           <Route path="/emailResult" element={<EmailGameResult />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/emailstart" element={<EmailStart />} />
         </Routes>
       </BrowserRouter>
     </div>

@@ -1,7 +1,8 @@
-.button, .AskGpt :hover{
-    cursor: pointer;
+.button,
+.AskGpt :hover {
+  cursor: pointer;
 }
-.EmailGameBody{
-    display: flex;
-    flex-direction: column;
+.EmailGameBody {
+  display: flex;
+  flex-direction: column;
 }

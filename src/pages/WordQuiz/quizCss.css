@@ -1,18 +1,33 @@
-.stopContainer :hover{
-    cursor: pointer;
+.stopContainer :hover {
+  cursor: pointer;
 }
-.stop{
-    background-color: #A5B68D;
-    width: 176px;
-    height: 56px;
-    border-radius: 12px;
-    border-width: 0px;
+.stop {
+  background-color: #a5b68d;
+  width: 176px;
+  height: 56px;
+  border-radius: 12px;
+  border-width: 0px;
 }
-.two{width: 20%;}
-.four{width: 40%;}
-.six{width: 60%;}
-.eight{width: 80%;}
-.ten{width: 100%;}
-.quiz1, .quiz2 :hover{
-    cursor: pointer;
+.title {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+.two {
+  width: 20%;
+}
+.four {
+  width: 40%;
+}
+.six {
+  width: 60%;
+}
+.eight {
+  width: 80%;
+}
+.ten {
+  width: 100%;
+}
+.quiz1,
+.quiz2 :hover {
+  cursor: pointer;
 }
