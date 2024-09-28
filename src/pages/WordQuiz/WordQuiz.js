@@ -1,83 +1,192 @@
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import "./quizCss.css";
 import { Link } from "react-router-dom";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
-// import { useState } from "react";
+import { ReactComponent as Right } from "../../assets/quiz/correct.svg";
+import { ReactComponent as Wrong } from "../../assets/quiz/wrong.svg";
+import quizApi from "../../api/quiz"; // API 가져오기
 
-const ProgressBar = styled.div`
-  width: 100%; /* 경험치 진행 상황에 따라 변경 (예: 60%) */
-  height: 30px;
-  border-radius: 30px 0 0 30px;
-  background-color: #c1cfa0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+const Container = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 `;
 
-const quizContainerStyle = {
-  backgroundColor: "#EDE8DC",
-  width: "326px",
-  height: "220px",
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
-  padding: "20px",
-};
+const ExpBar = styled.div`
+    width: 318px;
+    height: 24px;
+    border-radius: 30px;
+    background-color: #d9d9d9;
+    margin-top: 35px;
+    margin-bottom: 56px;
+    position: relative;
+`;
 
-const selectStyle = {
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-  width: "119px",
-  height: "83px",
-  backgroundColor: "#C1CFA0",
-  margin: "20px",
-};
+const ProgressBar = styled.div`
+    width: ${({ progress }) => progress}%;
+    height: 100%;
+    border-radius: ${({ progress }) => (progress === 100 ? '30px' : '15px 0 0 15px')};
+    background-color: #c1cfa0;
+    position: absolute;
+    top: 0;
+    left: 0;
+`;
 
-const resultStyle = {
-  display: "flex",
-  justifyContent: "center",
-  marginTop: "20px",
-  marginBottom: "10px",
-  color: "Red",
-  fontSize: "80px",
-  alignItems: "center",
-//   visibility: "hidden",
-};
+const ProgressText = styled.div`
+    position: absolute;
+    top: 4px; /* 위치 조정 */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    color: #000; /* 텍스트 색상 */
+`;
+
+const QuizContainer = styled.div`
+    background-color: #ede8dc;
+    border-radius: 12px;
+    width: 326px;
+    height: 270px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+`;
+
+const Select = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 119px;
+    height: 83px;
+    background-color: #c1cfa0;
+    border-radius: 12px;
+    cursor: pointer;
+    margin: 0 20px;
+
+    &:hover {
+        cursor: pointer;
+    }
+`;
+
+const StopContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 29px;
+`;
+
+const StopButton = styled.button`
+    background-color: #a5b68d;
+    width: 176px;
+    height: 56px;
+    border-radius: 12px;
+    border: none;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 49px;
+`;
+
+const Question = styled.div`
+    font-size: 20px;
+    padding-bottom: 10px;
+`;
+
+const QuestionText = styled.div`
+    font-size: 20px;
+`;
+
+const AnswerContainer = styled.div`
+    display: flex;
+    justify-content: space-between;
+    padding-top: 34px;
+`;
 
 const WordQuiz = () => {
-//   const[visible, setVisible] = useState(false); // 정답 띄우냐 안띄우냐
-//   const[result, setResult] = useState(false); // false: 오답, true: 정답
+  const [progress, setProgress] = useState(0);
+  const [isCorrect, setIsCorrect] = useState(null);
+  const [quiz, setQuiz] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [correctCount, setCorrectCount] = useState(0);
+
+  useEffect(() => {
+    const fetchQuiz = async () => {
+      try {
+        const quizData = await quizApi.getQuiz();
+        console.log("API 응답:", quizData);
+        const randomQuiz = quizData[Math.floor(Math.random() * quizData.length)];
+        setQuiz(randomQuiz); // 퀴즈 데이터 설정
+        setLoading(false);
+      } catch (error) {
+        console.error("퀴즈 데이터를 가져오는 데 오류 발생:", error);
+      }
+    };
+    fetchQuiz();
+  }, []);
+
+  if (loading) {
+    return <div>로딩 중...</div>; // 로딩 중 메시지
+  }
+
+  const handleSelect = async (index) => {
+    const { quizId, options } = quiz; // quizId 및 options 가져오기
+
+    try {
+      const response = await quizApi.postQuiz(quizId, index); // quizId와 인덱스 전송
+      console.log("API 응답:", response);
+
+      // 정답 여부에 따라 상태 업데이트
+      setIsCorrect(response.isCorrect); // API에서 반환된 정답 여부로 상태 설정
+
+      // 진행률 업데이트: 매번 20%씩 증가
+      setProgress((prevProgress) => Math.min(prevProgress + 20, 100));
+
+      // 다음 퀴즈를 가져오는 로직 추가
+      const quizData = await quizApi.getQuiz(); // 다음 퀴즈 가져오기
+      const nextQuiz = quizData[Math.floor(Math.random() * quizData.length)];
+      setQuiz(nextQuiz); // 다음 퀴즈 데이터 설정
+    } catch (error) {
+      console.error("퀴즈 정답 전송 오류!", error);
+    }
+  };
+
   return (
-    <div className="WordQuizPage">
+    <>
       <Header title="맞춤법 퀴즈" />
-      <ProgressBar className="two">
-        <h3>20</h3>
-      </ProgressBar>
-      <div className="ProblemContainer" style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-        <h3 className="title">다음중 무엇이 맞는 표현인가요?</h3>
-        <div style={quizContainerStyle}>
-          <h3 className="quiz" style={{ marginTop: "40px", marginBottom: "20px" }}>이곳에 문제</h3>
-          <div style={{ display: "flex" }}>
-            <div className="quiz1" style={{ ...selectStyle, borderRadius: "12px" }}>
-              <h3>문제1</h3>
-            </div>
-            <div className="quiz2" style={{ ...selectStyle, borderRadius: "12px" }}>
-              <h3>문제2</h3>
-            </div>
-          </div>
-        </div>
-      </div>
-      {/* 결과 화면, API 받아오기 */}
-      <div className="resultPage" style={resultStyle}>
-        O
-      </div>
-      <div className="stopContainer" style={{ display: "flex", justifyContent: "center" }}>
-        <Link to="/main"><button className="stop" type="button" style={{ color: "white", fontSize: "20px" }}>그만풀기</button></Link>
-      </div>
+      <Container>
+        <ExpBar>
+          <ProgressBar progress={progress} />
+          <ProgressText>{progress}%</ProgressText>
+        </ExpBar>
+        <Question>다음 중 무엇이 맞는 표현인가요?</Question>
+        <QuizContainer>
+          <QuestionText>{quiz?.question}</QuestionText>
+          <AnswerContainer>
+            {quiz?.options
+              ? quiz.options.map((answer, index) => (
+                <Select key={answer} onClick={() => handleSelect(index)}>
+                  <QuestionText>{answer}</QuestionText>
+                </Select>
+              ))
+              : null}
+          </AnswerContainer>
+        </QuizContainer>
+        {isCorrect !== null && (
+          <StopContainer>
+            {isCorrect ? <Right /> : <Wrong />}
+          </StopContainer>
+        )}
+        <Link to="/main">
+          <StopButton type="button">그만풀기</StopButton>
+        </Link>
+      </Container>
       <Footer />
-    </div>
+    </>
   );
 };
+
 export default WordQuiz;

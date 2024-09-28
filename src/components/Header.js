@@ -1,5 +1,11 @@
+import styled from "styled-components";
 import PreviousIcon from "../assets/previousIcon.svg";
 import "./Header.css";
+
+const Title = styled.div`
+  font-size: 22px;
+    font-weight: 600;
+`;
 
 const Header = ({ title, url }) => {
   const HeaderStyle = {
@@ -22,7 +28,7 @@ const Header = ({ title, url }) => {
         style={{ ...HeaderStyle, boxShadow: "0 2px 3px rgba(0,0,0,0.02), 0 1px 2px rgba(0,0,0,0.005)" }}
       >
         <img src={PreviousIcon} alt="Default" style={{ position: "absolute", left: "10px" }} className={(url === "null") ? "Test" : ""} />
-        <h2>{title}</h2>
+        <Title>{title}</Title>
       </div>
     </div>
   );
