@@ -29,7 +29,7 @@ const AnimatedText = styled.div`
   font-weight: 800;
   letter-spacing: 5.12px;
   animation: ${waveAnimation} 1.5s ease-in-out forwards; // 속도를 느리게 하고 한 번만 실행
-  animation-delay: ${(props) => props.delay}; // 각 글자에 대한 딜레이 설정
+  animation-delay: ${(props) => { return props.delay; }}; // 각 글자에 대한 딜레이 설정
 `;
 
 const StaticText = styled.div`
@@ -48,17 +48,19 @@ const SplashScreen = () => {
       navigate("/main");
     }, 2500);
 
-    return () => clearTimeout(timer);
+    return () => { return clearTimeout(timer); };
   }, [navigate]);
 
   return (
     <Container>
       <TextContainer>
-        {text.split("").map((char, index) => (
-          <AnimatedText key={char} delay={`${index * 0.1}s`}>
-            {char}
-          </AnimatedText>
-        ))}
+        {text.split("").map((char, index) => {
+          return (
+            <AnimatedText key={char} delay={`${index * 0.1}s`}>
+              {char}
+            </AnimatedText>
+          );
+        })}
       </TextContainer>
       <StaticText>
         세상을 향한 종합적 성장
