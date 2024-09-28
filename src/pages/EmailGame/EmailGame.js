@@ -56,7 +56,7 @@ const EmailGame = () => {
             검사하기
           </button>
         </div>
-        <Footer />
+        <Footer url="/email" />
       </div>
     </>
   );
