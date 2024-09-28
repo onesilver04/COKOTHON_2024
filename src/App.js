@@ -9,6 +9,7 @@ import Login from "./pages/Login/login";
 import LoginSecond from "./pages/Login/loginSecond";
 import EmailGame from "./pages/EmailGame/EmailGame";
 import EmailGameResult from "./pages/EmailGame/EmailGameResult";
+import Register from "./pages/register";
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
           <Route path="/loginSecond" element={<LoginSecond />} />
           <Route path="/email" element={<EmailGame />} />
           <Route path="/emailResult" element={<EmailGameResult />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
       </BrowserRouter>
     </div>

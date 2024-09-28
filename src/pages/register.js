@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import axios from "axios";
-import Header from "../../components/Header";
+import Header from "../components/Header";
 
 const Container = styled.div`
     display: flex;
@@ -89,43 +88,34 @@ const BoldText = styled.div`
     font-weight: 700;
     padding-top: 10px;
     text-decoration-line: underline;
-    cursor: pointer;
+    cursor: pointer; /* 클릭 가능하게 커서 변경 */
 `;
 
-const LoginSecond = () => {
+const Register = () => {
   const [username, setUsername] = useState("");
+  const [nickname, setNickname] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
   const clearUsername = () => setUsername("");
+  const clearNickname = () => setNickname("");
   const clearPassword = () => setPassword("");
 
-  const isFormValid = username && password;
+  const isFormValid = username && nickname && password;
 
-  const handleLogin = async () => {
+  const handleLogin = () => {
     if (isFormValid) {
-      try {
-        const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/v1/auth/login`, {
-          id: username,
-          password,
-        });
-
-        console.log(response.data);
-        localStorage.setItem("token", response.data.token);
-        navigate("/main");
-      } catch (error) {
-        console.error("로그인 오류:", error);
-      }
+      navigate("/loginSecond");
     }
   };
 
-  const handleSignUp = () => {
-    navigate("/register");
+  const handleLoginTextClick = () => {
+    navigate("/loginSecond");
   };
 
   return (
     <div>
-      <Header title="로그인" />
+      <Header title="회원가입" />
       <Container>
         <InputContainer>
           <Input
@@ -145,16 +135,25 @@ const LoginSecond = () => {
           />
           {password && <ClearButton onClick={clearPassword}>×</ClearButton>}
         </InputContainer>
+        <InputContainer>
+          <Input
+            type="text"
+            placeholder="닉네임"
+            value={nickname}
+            onChange={(e) => setNickname(e.target.value)}
+          />
+          {nickname && <ClearButton onClick={clearNickname}>×</ClearButton>}
+        </InputContainer>
         <LoginButton onClick={handleLogin} disabled={!isFormValid}>
-          로그인
+          회원가입
         </LoginButton>
         <TextContainer>
-          <Text>아직 회원이 아니신가요?</Text>
-          <BoldText onClick={handleSignUp}>회원가입</BoldText>
+          <Text>이미 회원이신가요?</Text>
+          <BoldText onClick={handleLoginTextClick}>로그인</BoldText>
         </TextContainer>
       </Container>
     </div>
   );
 };
 
-export default LoginSecond;
+export default Register;
