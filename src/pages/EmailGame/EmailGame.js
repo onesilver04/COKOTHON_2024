@@ -17,6 +17,7 @@ const EmailGame = () => {
     backgroundColor: "#A5B68D",
     fontSize: "20px",
     marginBottom: "45px",
+    color: "white",
   };
   return (
     <div className="EmailGameBody">
