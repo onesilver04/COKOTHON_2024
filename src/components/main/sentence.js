@@ -57,7 +57,10 @@ const Sentence = () => {
   }, []);
   return (
     <div>
-      <Text>{ author } </Text>
+      <Text>
+        { author }
+        {" "}
+      </Text>
       <SentenceContainer>
         <div style={{ fontSize: "30px", color: "black" }}>{ sentence }</div>
       </SentenceContainer>
