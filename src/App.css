@@ -4,9 +4,13 @@
     min-height: 100vh;
     max-height: 100vh;
     overflow-y: scroll;
+    overflow-x: hidden;
     scrollbar-width: none;
     width: auto;
     position: relative;
     word-break: keep-all;
 }
 
+body{
+    margin: 0;
+}
