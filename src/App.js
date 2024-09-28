@@ -4,7 +4,7 @@ import TestPage from "./pages/Test/testPage";
 import NoteCard from "./pages/Test/Note/NoteCard";
 import Mypage from "./pages/Test/Mypage/Mypage"; // 마이페이지 임포트
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <BrowserRouter>
@@ -16,6 +16,6 @@ function App() {
       </BrowserRouter>
     </div>
   );
-}
+};
 
 export default App;

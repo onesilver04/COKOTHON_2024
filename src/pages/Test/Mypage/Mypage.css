@@ -13,7 +13,6 @@
   background-color: #f0f0e9;
   text-align: center;
   padding: 20px;
-  margin-top: 67px;
   height: 314px;
 }
 
@@ -45,7 +44,7 @@
   height: 19px;
   background-color: #e0e0e0;
   border-radius: 10px;
-  margin-bottom: 70px;
+  /* margin-bottom: 70px; */
   margin-left: 58px;
 }
 
@@ -54,7 +53,7 @@
   height: 19px;
   background-color: #a5b68d;
   border-radius: 10px;
-  margin-bottom: 70px;
+  /* margin-bottom: 70px; */
 }
 
 /* 오답노트 섹션 */
@@ -114,7 +113,7 @@
   color: #666;
 }
 
-/* 하단 네비게이션 */
+/* 하단 네비게이션
 .footer {
   display: flex;
   justify-content: space-around;
@@ -127,4 +126,4 @@
   background: none;
   border: none;
   font-size: 24px;
-}
+} */
