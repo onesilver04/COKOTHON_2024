@@ -29,7 +29,9 @@ const AnimatedText = styled.div`
   font-weight: 800;
   letter-spacing: 5.12px;
   animation: ${waveAnimation} 1.5s ease-in-out forwards; // 속도를 느리게 하고 한 번만 실행
-  animation-delay: ${(props) => { return props.delay; }}; // 각 글자에 대한 딜레이 설정
+  animation-delay: ${(props) => {
+    return props.delay;
+  }}; // 각 글자에 대한 딜레이 설정
 `;
 
 const StaticText = styled.div`
@@ -45,10 +47,12 @@ const SplashScreen = () => {
   useEffect(() => {
     // 1.5초 후에 메인 페이지로 이동
     const timer = setTimeout(() => {
-      navigate("/main");
+      navigate("/login");
     }, 2500);
 
-    return () => { return clearTimeout(timer); };
+    return () => {
+      return clearTimeout(timer);
+    };
   }, [navigate]);
 
   return (
