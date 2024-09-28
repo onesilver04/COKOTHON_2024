@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import './quizCss.css';
+import "./quizCss.css";
 import { Link } from "react-router-dom";
-import Footer from '../../components/Footer';
-import Header from '../../components/Header';
+import Footer from "../../components/Footer";
+import Header from "../../components/Header";
 // import { useState } from "react";
 
 const ProgressBar = styled.div`

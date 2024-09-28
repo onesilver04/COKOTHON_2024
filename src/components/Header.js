@@ -1,5 +1,5 @@
-import PreviousIcon from '../assets/previousIcon.svg';
-import './Header.css';
+import PreviousIcon from "../assets/previousIcon.svg";
+import "./Header.css";
 
 const Header = ({ title, url }) => {
   const HeaderStyle = {
