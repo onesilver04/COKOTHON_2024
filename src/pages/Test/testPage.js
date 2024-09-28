@@ -1,10 +1,10 @@
 import React from "react";
-import Header from "../../components/Header";
+import EmailGame from "../EmailGame/EmailGame";
 
 const TestPage = () => {
   return (
     <div>
-      <Header title="제목" />
+      <EmailGame />
     </div>
   );
 };
