@@ -68,17 +68,17 @@ const LoginButton = styled.button`
 
   &:hover {
     background-color: ${(props) => {
-      return props.disabled ? "#d3d3d3" : "#8fa47d";
-    }};
+    return props.disabled ? "#d3d3d3" : "#8fa47d";
+  }};
   }
 
   &:active {
     transform: ${(props) => {
-      return props.disabled ? "none" : "scale(0.95)";
-    }};
+    return props.disabled ? "none" : "scale(0.95)";
+  }};
     background-color: ${(props) => {
-      return props.disabled ? "#d3d3d3" : "#7b8f6c";
-    }};
+    return props.disabled ? "#d3d3d3" : "#7b8f6c";
+  }};
   }
 `;
 
@@ -124,7 +124,7 @@ const LoginSecond = () => {
           {
             id: username,
             password,
-          }
+          },
         );
 
         console.log(response.data);
