@@ -1,4 +1,8 @@
 /* NoteCard.css */
+.note-card-container {
+  margin-top: 120px; /* 부모 요소에 여백 추가 */
+}
+
 .note-card {
   display: flex;
   flex-direction: column; /* 세로 방향으로 박스 아래에 설명 배치 */
@@ -6,6 +10,7 @@
   margin: 10px;
   padding: 20px;
   border-radius: 10px;
+  margin-top: 120px;
 }
 
 .box-container {

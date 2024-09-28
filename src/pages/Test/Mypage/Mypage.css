@@ -1,0 +1,130 @@
+/* MyPage 전체 레이아웃 */
+.my-page {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #f8f8f8;
+}
+
+/* 프로필 섹션 */
+.profile-section {
+  background-color: #f0f0e9;
+  text-align: center;
+  padding: 20px;
+  margin-top: 67px;
+  height: 314px;
+}
+
+.profile-image {
+  width: 140px;
+  height: 140px;
+  background-color: #e0e0e0;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+.profile-name {
+  margin-top: 10px;
+  font-size: 24px;
+}
+
+.profile-info {
+  margin: 5px 0;
+  color: #666;
+}
+
+.progress-bar-container {
+  color: white;
+  padding-bottom: 20px;
+}
+
+.progress-bar {
+  margin-right: 58px;
+  height: 19px;
+  background-color: #e0e0e0;
+  border-radius: 10px;
+  margin-bottom: 70px;
+  margin-left: 58px;
+}
+
+.progress {
+  width: 50%; /* 예시 값 */
+  height: 19px;
+  background-color: #a5b68d;
+  border-radius: 10px;
+  margin-bottom: 70px;
+}
+
+/* 오답노트 섹션 */
+.note-section {
+  padding: 20px;
+}
+
+.note-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.note-header h3 {
+  margin: 0;
+}
+
+.more-link {
+  color: #a5b68d;
+  text-decoration: none;
+}
+
+.note-card {
+  display: flex;
+  justify-content: space-between;
+  background-color: #f8f8f8;
+  padding: 20px;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+.wrong-box,
+.right-box {
+  width: 48%;
+  padding: 20px;
+  text-align: center;
+  border-radius: 5px;
+  align-items: center;
+}
+
+.wrong-box {
+  background-color: #f0e4e4;
+  margin-left: 10px;
+  width: 100px;
+}
+
+.right-box {
+  background-color: #a5b68d;
+  margin-right: 10px;
+  width: 100px;
+}
+
+.description {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #666;
+}
+
+/* 하단 네비게이션 */
+.footer {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+.footer-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+}

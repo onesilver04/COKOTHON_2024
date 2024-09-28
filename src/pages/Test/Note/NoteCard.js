@@ -1,11 +1,11 @@
 import React from "react";
 import "./NoteCard.css";
-import Note from "../../components/Note";
-import dummy from "./dummy";
+import Note from "../../../components/Note";
+import dummy from "../dummy";
 
 const NoteCard = () => {
   return (
-    <div>
+    <div className="note-card-container">
       {dummy.map((item) => {
         return (
           <Note wrong={item.wrong} right={item.right} define={item.define} />
