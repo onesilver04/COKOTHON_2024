@@ -12,7 +12,7 @@ const login = async (id, password) => {
         headers: {
           "Content-Type": "application/json", // Content-Type 설정
         },
-      }
+      },
     );
     return response.data;
   } catch (error) {
@@ -34,7 +34,7 @@ const register = async (id, password, nickname) => {
         headers: {
           "Content-Type": "application/json", // Content-Type 설정
         },
-      }
+      },
     );
     return response.data;
   } catch (error) {

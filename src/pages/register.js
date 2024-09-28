@@ -46,7 +46,7 @@ const ClearButton = styled.button`
 `;
 
 const LoginButton = styled.button`
-    background-color: ${(props) => (props.disabled ? "#d3d3d3" : "#a5b68d")};
+    background-color: ${(props) => { return (props.disabled ? "#d3d3d3" : "#a5b68d"); }};
     margin-top: 50px;
     width: 384px;
     height: 56px;
@@ -56,18 +56,18 @@ const LoginButton = styled.button`
     border: none;
     border-radius: 10px;
     padding: 12px 24px;
-    cursor: ${(props) => (props.disabled ? "not-allowed" : "pointer")};
+    cursor: ${(props) => { return (props.disabled ? "not-allowed" : "pointer"); }};
     transition:
             background-color 0.3s ease,
             transform 0.1s ease;
 
     &:hover {
-        background-color: ${(props) => (props.disabled ? "#d3d3d3" : "#8fa47d")};
+        background-color: ${(props) => { return (props.disabled ? "#d3d3d3" : "#8fa47d"); }};
     }
 
     &:active {
-        transform: ${(props) => (props.disabled ? "none" : "scale(0.95)")};
-        background-color: ${(props) => (props.disabled ? "#d3d3d3" : "#7b8f6c")};
+        transform: ${(props) => { return (props.disabled ? "none" : "scale(0.95)"); }};
+        background-color: ${(props) => { return (props.disabled ? "#d3d3d3" : "#7b8f6c"); }};
     }
 `;
 
@@ -97,9 +97,9 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  const clearUsername = () => setUsername("");
-  const clearNickname = () => setNickname("");
-  const clearPassword = () => setPassword("");
+  const clearUsername = () => { return setUsername(""); };
+  const clearNickname = () => { return setNickname(""); };
+  const clearPassword = () => { return setPassword(""); };
 
   const isFormValid = username && nickname && password;
 
@@ -122,7 +122,7 @@ const Register = () => {
             type="text"
             placeholder="아이디"
             value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            onChange={(e) => { return setUsername(e.target.value); }}
           />
           {username && <ClearButton onClick={clearUsername}>×</ClearButton>}
         </InputContainer>
@@ -131,7 +131,7 @@ const Register = () => {
             type="password"
             placeholder="비밀번호"
             value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={(e) => { return setPassword(e.target.value); }}
           />
           {password && <ClearButton onClick={clearPassword}>×</ClearButton>}
         </InputContainer>
@@ -140,7 +140,7 @@ const Register = () => {
             type="text"
             placeholder="닉네임"
             value={nickname}
-            onChange={(e) => setNickname(e.target.value)}
+            onChange={(e) => { return setNickname(e.target.value); }}
           />
           {nickname && <ClearButton onClick={clearNickname}>×</ClearButton>}
         </InputContainer>

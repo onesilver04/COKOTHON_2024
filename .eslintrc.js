@@ -22,6 +22,7 @@ module.exports = {
     "react", // React 관련 linting 규칙을 사용
   ],
   rules: {
+    "no-console": "off",
     // JSX에 React가 필요하지 않으므로 비활성화
     "react/react-in-jsx-scope": "off",
     // Stateless 함수형 컴포넌트를 권장하지 않으므로 비활성화
