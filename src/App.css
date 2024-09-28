@@ -10,3 +10,6 @@
     word-break: keep-all;
 }
 
+body{
+    margin: 0;
+}

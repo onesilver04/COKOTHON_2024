@@ -42,6 +42,7 @@ const Ment = styled.div`
 const MyMileage = styled.div`
   font-size: 10px;
   padding-bottom: 12px;
+  padding-left: 3px;
 `;
 
 const ExpContainer = styled.div`
