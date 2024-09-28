@@ -9,11 +9,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/test" element={<TestPage />} />
-
-          <Route
-            path="/note"
-            element={<NoteCard right="몇일" wrong="며칠" />}
-          />
+          <Route path="/note" element={<NoteCard />} />
         </Routes>
       </BrowserRouter>
     </div>
