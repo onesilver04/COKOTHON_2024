@@ -5,7 +5,7 @@ import MessageIcon from "../assets/MessageIcon.svg";
 import QuestionIcon from "../assets/QuestionIcon.svg";
 import ProfileIcon from "../assets/ProfileIcon.svg";
 
-const Footer = () => {
+const Footer = ({ url }) => {
   return (
     <div>
       <div className="Home" style={{ backgroundColor: "white" }}>
@@ -16,5 +16,8 @@ const Footer = () => {
       </div>
     </div>
   );
+};
+Footer.defaultProps = {
+  url: "null",
 };
 export default Footer;

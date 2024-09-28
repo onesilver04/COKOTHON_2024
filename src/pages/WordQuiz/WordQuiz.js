@@ -76,7 +76,7 @@ const WordQuiz = () => {
       <div className="stopContainer" style={{ display: "flex", justifyContent: "center" }}>
         <Link to="/quizstart"><button className="stop" type="button" style={{ color: "white", fontSize: "20px" }}>그만풀기</button></Link>
       </div>
-      <Footer />
+      <Footer url="/quiz" />
     </div>
   );
 };
