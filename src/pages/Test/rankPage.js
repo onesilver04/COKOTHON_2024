@@ -12,11 +12,17 @@ const RankPage = () => {
       </div>
       <div className="ranking">
         <div className="ranking-container">
-          <ol>
+          <div>
             {dummy.map((item) => {
-              return <Rank username={item.username} userExp={item.userExp} />;
+              return (
+                <Rank
+                  rank={item.rank}
+                  username={item.username}
+                  userExp={item.userExp}
+                />
+              );
             })}
-          </ol>
+          </div>
         </div>
       </div>
     </div>

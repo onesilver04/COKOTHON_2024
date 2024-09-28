@@ -5,13 +5,12 @@
 }
 
 svg {
-  margin: 20px;
-  margin-bottom: 40px;
+  padding: 20px;
+  padding-bottom: 55px;
 }
 
 .ranking{
   text-align: center;
-  /* background-color: antiquewhite; */
 }
 
 .ranking-container {
@@ -27,12 +26,11 @@ svg {
   justify-content: center;
   background-color: #EDE8DC;
   height: 60px;
-  margin: 14px;
+  margin: 15px 0;
   border-radius: 14px;
-  /* background-color: aqua; */
 }
 
-.rank-user-exp{
-  /* background-color: aqua; */
-  padding: 0 6px;
+.rank-contents {
+  align-items: center;
+  justify-content: center;
 }
