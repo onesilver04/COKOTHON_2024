@@ -8,7 +8,7 @@ import ProfileIcon from "../assets/ProfileIcon.svg";
 const Footer = () => {
   return (
     <div>
-      <div className="Home">
+      <div className="Home" style={{ backgroundColor: "white" }}>
         <Link to="/main">
           <img src={HomeIcon} alt="hello" />
         </Link>
@@ -18,7 +18,7 @@ const Footer = () => {
         <Link to="/quiz">
           <img src={QuestionIcon} alt="hello" />
         </Link>
-        <Link to="/mypage">
+        <Link to="/myPage">
           <img src={ProfileIcon} alt="hello" />
         </Link>
       </div>
