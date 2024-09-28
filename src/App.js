@@ -1,7 +1,15 @@
+import "./App.css";
+import { Route, Routes, BrowserRouter } from "react-router-dom";
+import TestPage from "./pages/Test/testPage";
+
 function App() {
   return (
     <div className="App">
-      <h1>6조 화이띵</h1>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/test" element={<TestPage />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
