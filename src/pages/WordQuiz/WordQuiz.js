@@ -5,7 +5,6 @@ import Footer from '../../components/Footer';
 import Header from '../../components/Header';
 // import { useState } from "react";
 
-
 const ProgressBar = styled.div`
   width: 100%; /* 경험치 진행 상황에 따라 변경 (예: 60%) */
   height: 30px;
