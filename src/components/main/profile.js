@@ -64,7 +64,7 @@ const ExpBar = styled.div`
 const ProgressBar = styled.div`
   width: 60%; /* 경험치 진행 상황에 따라 변경 (예: 60%) */
   height: 100%;
-  border-radius: 30px 0px 0px 30px;
+  border-radius: 30px 0 0 30px;
   background-color: #c1cfa0;
   position: absolute;
   top: 0;
