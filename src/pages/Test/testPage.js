@@ -1,10 +1,10 @@
 import React from "react";
-import Footer from "../../components/Footer";
+import Header from "../../components/Header";
 
 const TestPage = () => {
   return (
     <div>
-      <Footer />
+      <Header title="제목" />
     </div>
   );
 };
