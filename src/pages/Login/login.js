@@ -53,12 +53,16 @@ const Login = () => {
     <div>
       <Container>
         <Text>
-          세상을 향한 종합적 성장 <br />
+          세상을 향한 종합적 성장
+          {" "}
+          <br />
           대학생 어휘 완성하기
         </Text>
         <Title>세종대완</Title>
         <Text>함께 시작해볼까요?</Text>
-        <LoginButton>시작하기</LoginButton> {/* 시작하기 버튼 추가 */}
+        <LoginButton>시작하기</LoginButton>
+        {" "}
+        {/* 시작하기 버튼 추가 */}
       </Container>
     </div>
   );
