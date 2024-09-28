@@ -8,6 +8,22 @@
     border-radius: 12px;
     border-width: 0px;
 }
+.start{
+    background-color: #A5B68D;
+    width: 257px;
+    height: 65px;
+    border-radius: 12px;
+    border-width: 0px;
+}
+
+.iconContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 80px;
+    height: 480px;
+}
+
 .two{width: 20%;}
 .four{width: 40%;}
 .six{width: 60%;}

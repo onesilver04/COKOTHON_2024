@@ -51,7 +51,7 @@ const WordQuiz = () => {
 //   const[result, setResult] = useState(false); // false: 오답, true: 정답
   return (
     <div className="WordQuizPage">
-      <Header title="맞춤법 퀴즈" />
+      <Header title="맞춤법 퀴즈" url="/quizstart" />
       <ProgressBar className="two">
         <h3>20</h3>
       </ProgressBar>
@@ -74,7 +74,7 @@ const WordQuiz = () => {
         O
       </div>
       <div className="stopContainer" style={{ display: "flex", justifyContent: "center" }}>
-        <Link to="/main"><button className="stop" type="button" style={{ color: "white", fontSize: "20px" }}>그만풀기</button></Link>
+        <Link to="/quizstart"><button className="stop" type="button" style={{ color: "white", fontSize: "20px" }}>그만풀기</button></Link>
       </div>
       <Footer />
     </div>

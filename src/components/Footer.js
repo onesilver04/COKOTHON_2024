@@ -11,7 +11,7 @@ const Footer = () => {
       <div className="Home" style={{ backgroundColor: "white" }}>
         <Link to="/main"><img src={HomeIcon} alt="hello" /></Link>
         <Link to="/email"><img src={MessageIcon} alt="hello" /></Link>
-        <Link to="/quiz"><img src={QuestionIcon} alt="hello" /></Link>
+        <Link to="/quizStart"><img src={QuestionIcon} alt="hello" /></Link>
         <Link to="/mypage"><img src={ProfileIcon} alt="hello" /></Link>
       </div>
     </div>
