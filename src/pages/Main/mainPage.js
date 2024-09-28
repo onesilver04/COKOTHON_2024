@@ -12,18 +12,21 @@ const MainContainer = styled.div`
   align-items: center;
 `;
 
-const MainPage = () => {
+const MainPage = ({ prevUrl }) => {
   return (
     <div>
-      <Header title="Main" />
+      <Header title="Main" url={prevUrl} />
       <MainContainer>
         <ProfileContainer />
         <Attendance />
         <Score />
         <Sentence />
       </MainContainer>
-      <Footer />
+      <Footer url="/main" />
     </div>
   );
+};
+MainPage.defaultProps = {
+  prevUrl: "null",
 };
 export default MainPage;

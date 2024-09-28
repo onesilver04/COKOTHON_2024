@@ -5,16 +5,19 @@ import MessageIcon from "../assets/MessageIcon.svg";
 import QuestionIcon from "../assets/QuestionIcon.svg";
 import ProfileIcon from "../assets/ProfileIcon.svg";
 
-const Footer = () => {
+const Footer = ({ url }) => {
   return (
     <div>
       <div className="Home" style={{ backgroundColor: "white" }}>
-        <Link to="/main"><img src={HomeIcon} alt="hello" /></Link>
-        <Link to="/email"><img src={MessageIcon} alt="hello" /></Link>
-        <Link to="/quiz"><img src={QuestionIcon} alt="hello" /></Link>
-        <Link to="/myPage"><img src={ProfileIcon} alt="hello" /></Link>
+        <Link to={{ pathname: "/main", state: { prevUrl: url } }}><img src={HomeIcon} alt="hello" /></Link>
+        <Link to={{ pathname: "/email", state: { prevUrl: url } }}><img src={MessageIcon} alt="hello" /></Link>
+        <Link to={{ pathname: "/quiz", state: { prevUrl: url } }}><img src={QuestionIcon} alt="hello" /></Link>
+        <Link to={{ pathname: "/myPage", state: { prevUrl: url } }}><img src={ProfileIcon} alt="hello" /></Link>
       </div>
     </div>
   );
+};
+Footer.defaultProps = {
+  url: "null",
 };
 export default Footer;

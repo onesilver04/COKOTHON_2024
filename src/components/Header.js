@@ -1,4 +1,7 @@
-const Header = ({ title }) => {
+import PreviousIcon from '../assets/previousIcon.svg';
+import './Header.css';
+
+const Header = ({ title, url }) => {
   const HeaderStyle = {
     display: "flex",
     justifyContent: "center",
@@ -7,9 +10,10 @@ const Header = ({ title }) => {
     top: "0",
     width: "100%",
     height: "40px",
-    paddingBottom: "20px",
+    padding: "10px",
     backgroundColor: "white",
     textAlign: "center",
+    alignItems: "center",
   };
   return (
     <div>
@@ -17,9 +21,15 @@ const Header = ({ title }) => {
         className="Header"
         style={{ ...HeaderStyle, boxShadow: "0 2px 3px rgba(0,0,0,0.02), 0 1px 2px rgba(0,0,0,0.005)" }}
       >
+        <img src={PreviousIcon} alt="Default" style={{ position: "absolute", left: "10px" }} className={(url === "null") ? "Test" : ""} />
         <h2>{title}</h2>
       </div>
     </div>
   );
+};
+
+Header.defaultProps = {
+  title: "title",
+  url: "null",
 };
 export default Header;
