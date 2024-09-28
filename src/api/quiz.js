@@ -1,7 +1,7 @@
 /* eslint-disable camelcase */
 import axios from "axios";
 
-const getQuiz = async (id, password) => {
+const getQuiz = async () => {
   try {
     const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/v1/quiz`, {
       headers: {
