@@ -7,17 +7,18 @@ import Header from "../../../components/Header";
 
 const NoteCard = () => {
   return (
-    <div className="note-card-container">
+    <>
       <Header title="오답 노트" />
-      {dummy.map((item) => {
-        return (
-          <Note wrong={item.wrong} right={item.right} define={item.define} />
-        );
-      })}
-      <div className="footer-container">
-        <Footer />
+      <div className="note-card-container">
+        {dummy.map((item) => {
+          return (
+            <Note wrong={item.wrong} right={item.right} define={item.define} />
+          );
+        })}
+        <div className="footer-container" />
       </div>
-    </div>
+      <Footer />
+    </>
   );
 };
 

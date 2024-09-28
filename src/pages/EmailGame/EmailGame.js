@@ -20,23 +20,42 @@ const EmailGame = () => {
     color: "white",
   };
   return (
-    <div className="EmailGameBody">
+    <>
       <Header title="메일 보내기 게임" />
-      <div className="GameBody" style={{ padding: "50px", paddingBottom: "25px" }}>
-        <div className="title">
-          <h3 style={{ fontSize: "15px", marginBottom: "2px" }}>제목</h3>
-          <input placeholder="제목을 입력하세요" style={{ ...inputStyle, height: "40px" }} />
+      <div className="EmailGameBody">
+        <div
+          className="GameBody"
+          style={{ padding: "20px", paddingTop: "38px", paddingBottom: "25px" }}
+        >
+          <div className="title">
+            <h3 style={{ fontSize: "15px", marginBottom: "2px" }}>제목</h3>
+            <input
+              placeholder="제목을 입력하세요"
+              style={{ ...inputStyle, height: "40px" }}
+            />
+          </div>
+          <div className="content">
+            <h3 style={{ fontSize: "15px", marginBottom: "2px" }}>내용</h3>
+            <input placeholder="내용을 입력하세요" style={inputStyle} />
+          </div>
         </div>
-        <div className="content">
-          <h3 style={{ fontSize: "15px", marginBottom: "2px" }}>내용</h3>
-          <input placeholder="내용을 입력하세요" style={inputStyle} />
+        <div
+          className="AskGpt"
+          style={{ display: "flex", justifyContent: "center" }}
+        >
+          <button
+            type="button"
+            style={buttonStyle}
+            onClick={() => {
+              console.log("Test");
+            }}
+          >
+            검사하기
+          </button>
         </div>
+        <Footer />
       </div>
-      <div className="AskGpt" style={{ display: "flex", justifyContent: "center" }}>
-        <button type="button" style={buttonStyle} onClick={() => { console.log("Test"); }}>검사하기</button>
-      </div>
-      <Footer />
-    </div>
+    </>
   );
 };
 export default EmailGame;
