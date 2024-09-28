@@ -1,8 +1,11 @@
+import { useNavigate } from "react-router-dom"; // useNavigate 훅 임포트
 import "./styleCss.css";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 
 const EmailGame = () => {
+  const navigate = useNavigate(); // useNavigate 훅 호출
+
   const inputStyle = {
     width: "380px",
     height: "350px",
@@ -19,6 +22,12 @@ const EmailGame = () => {
     marginBottom: "45px",
     color: "white",
   };
+
+  // 버튼 클릭 시 emailResult 페이지로 이동하는 함수
+  const handleCheckClick = () => {
+    navigate("/emailResult");
+  };
+
   return (
     <>
       <Header title="메일 보내기 게임" />
@@ -43,7 +52,7 @@ const EmailGame = () => {
           className="AskGpt"
           style={{ display: "flex", justifyContent: "center" }}
         >
-          <button type="button" style={buttonStyle}>
+          <button type="button" style={buttonStyle} onClick={handleCheckClick}>
             검사하기
           </button>
         </div>

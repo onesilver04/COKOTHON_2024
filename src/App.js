@@ -8,6 +8,7 @@ import SplashScreen from "./pages/SplashScreen/splashScreen";
 import Login from "./pages/Login/login";
 import LoginSecond from "./pages/Login/loginSecond";
 import EmailGame from "./pages/EmailGame/EmailGame";
+import EmailGameResult from "./pages/EmailGame/EmailGameResult";
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/loginSecond" element={<LoginSecond />} />
           <Route path="/email" element={<EmailGame />} />
+          <Route path="/emailResult" element={<EmailGameResult />} />
         </Routes>
       </BrowserRouter>
     </div>
