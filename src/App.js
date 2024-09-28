@@ -33,7 +33,6 @@ const App = () => {
           <Route path="/email" element={<EmailGame />} />
           <Route path="/emailResult" element={<EmailGameResult />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/quiz" element={<WordQuiz />} />
           <Route path="/emailstart" element={<EmailStart />} />
         </Routes>
       </BrowserRouter>
