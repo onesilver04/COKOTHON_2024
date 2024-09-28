@@ -43,13 +43,7 @@ const EmailGame = () => {
           className="AskGpt"
           style={{ display: "flex", justifyContent: "center" }}
         >
-          <button
-            type="button"
-            style={buttonStyle}
-            onClick={() => {
-              console.log("Test");
-            }}
-          >
+          <button type="button" style={buttonStyle}>
             검사하기
           </button>
         </div>
