@@ -1,10 +1,10 @@
 import React from "react";
-import EmailGame from "../EmailGame/EmailGame";
+import WordQuiz from "../WordQuiz/WordQuiz";
 
 const TestPage = () => {
   return (
     <div>
-      <EmailGame />
+      <WordQuiz />
     </div>
   );
 };
