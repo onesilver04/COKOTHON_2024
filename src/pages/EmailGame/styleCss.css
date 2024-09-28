@@ -1,0 +1,6 @@
+.button, .AskGpt :hover{
+    cursor: pointer;
+}
+.EmailGameBody{
+    border-bottom: solid black 1px;
+}
