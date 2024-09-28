@@ -16,7 +16,7 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/test" element={<TestPage />} />
-          <Route path="/test" element={<RankPage />} />
+          <Route path="/rank" element={<RankPage />} />
           <Route path="/note" element={<NoteCard />} />
           <Route path="/mypage" element={<Mypage />} />
           <Route path="/main" element={<Main />} />

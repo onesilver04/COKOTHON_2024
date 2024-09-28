@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const Text = styled.div`
   font-size: 16px;
@@ -25,7 +26,7 @@ const ScoreContainer = styled.div`
 const Score = () => {
   return (
     <div>
-      <Text>내 어휘력 순위 </Text>
+      <Text><Link to="/rank" classname="more-link" style={{ "text-decoration": "none", color: "black" }}>내 어휘력 순위</Link></Text>
       <ScoreContainer />
     </div>
   );
