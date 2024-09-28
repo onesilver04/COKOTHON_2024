@@ -10,16 +10,29 @@ const Text = styled.div`
   padding-top: 35px;
 `;
 
+const Author = styled.div`
+    color: black;
+  font-size: 16px;
+  font-weight: 600;
+    padding-top: 20px
+`;
+
+const Contents = styled.div`
+    color: black;
+  font-size: 20px;
+  font-weight: 600;
+`;
+
 const SentenceContainer = styled.div`
   width: 402px;
   height: 161px;
   border-radius: 15px;
   display: flex;
+    flex-direction: column;
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
-  background-color: #e8cccb;
-  opacity: 55%;
+    background-color: rgba(232, 204, 203, 0.55);
   padding-left: 20px;
   padding-right: 20px;
 `;
@@ -58,11 +71,17 @@ const Sentence = () => {
   return (
     <div>
       <Text>
-        { author }
-        {" "}
+        오늘의 명언
       </Text>
       <SentenceContainer>
-        <div style={{ fontSize: "30px", color: "black" }}>{ sentence }</div>
+        <Contents>{ sentence }</Contents>
+        <Author>
+          -
+          {" "}
+          { author }
+          {" "}
+          -
+        </Author>
       </SentenceContainer>
     </div>
   );
