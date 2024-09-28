@@ -93,8 +93,8 @@ const LoginSecond = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const clearUsername = () => setUsername("");
-  const clearPassword = () => setPassword("");
+  const clearUsername = () => { return setUsername(""); };
+  const clearPassword = () => { return setPassword(""); };
 
   return (
     <div>
@@ -105,7 +105,7 @@ const LoginSecond = () => {
             type="text"
             placeholder="아이디"
             value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            onChange={(e) => { return setUsername(e.target.value); }}
           />
           {username && <ClearButton onClick={clearUsername}>×</ClearButton>}
         </InputContainer>
@@ -114,7 +114,7 @@ const LoginSecond = () => {
             type="password"
             placeholder="비밀번호"
             value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={(e) => { return setPassword(e.target.value); }}
           />
           {password && <ClearButton onClick={clearPassword}>×</ClearButton>}
         </InputContainer>
