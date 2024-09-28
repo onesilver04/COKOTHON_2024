@@ -58,6 +58,14 @@
 /* 오답노트 섹션 */
 .note-section {
   padding: 20px;
+  height: 400px;
+  overflow-y: auto;
+}
+
+/* note-card들을 묶는 컨테이너 */
+.note-card-wrapper {
+  max-height: 400px; /* 원하는 높이 설정 */
+  overflow-y: auto; /* 세로 스크롤 활성화 */
 }
 
 .note-header {
@@ -111,18 +119,3 @@
   font-size: 14px;
   color: #666;
 }
-
-/* 하단 네비게이션
-.footer {
-  display: flex;
-  justify-content: space-around;
-  padding: 10px 0;
-  background-color: #fff;
-  border-top: 1px solid #ccc;
-}
-
-.footer-btn {
-  background: none;
-  border: none;
-  font-size: 24px;
-} */
