@@ -9,6 +9,7 @@ const ProfileContainer = styled.div`
   padding-left: 29px;
   box-sizing: border-box;
   background-color: #ede8dc;
+  margin-bottom: 23px;
 `;
 
 const ProfileImg = styled.div`
