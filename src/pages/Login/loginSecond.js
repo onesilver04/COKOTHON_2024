@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom"; // 페이지 이동을 위한 useNavigate 사용
 import styled from "styled-components";
 import Header from "../../components/Header";
 
@@ -19,7 +20,7 @@ const InputContainer = styled.div`
 const Input = styled.input`
   width: 320px;
   height: 40px;
-  padding: 12px 40px 12px 20px; /* 삭제 버튼 공간을 위해 오른쪽 패딩 추가 */
+  padding: 12px 40px 12px 20px;
   font-size: 18px;
   border-radius: 8px;
   border: 2px solid #a5b68d;
@@ -31,10 +32,10 @@ const Input = styled.input`
 
 const ClearButton = styled.button`
   position: absolute;
-  right: 10px; /* 입력 필드 안에서 삭제 버튼 위치 조정 */
+  right: 10px;
   background-color: transparent;
   border: none;
-  font-size: 24px; /* 엑스 버튼 크기 조정 */
+  font-size: 24px;
   cursor: pointer;
   color: red;
   opacity: 70%;
@@ -45,7 +46,7 @@ const ClearButton = styled.button`
 `;
 
 const LoginButton = styled.button`
-  background-color: #a5b68d;
+  background-color: ${(props) => { return (props.disabled ? "#d3d3d3" : "#a5b68d"); }}; /* 버튼 색상 변경 */
   margin-top: 50px;
   width: 384px;
   height: 56px;
@@ -55,18 +56,18 @@ const LoginButton = styled.button`
   border: none;
   border-radius: 10px;
   padding: 12px 24px;
-  cursor: pointer;
+  cursor: ${(props) => { return (props.disabled ? "not-allowed" : "pointer"); }}; /* 커서 상태 변경 */
   transition:
     background-color 0.3s ease,
     transform 0.1s ease;
 
   &:hover {
-    background-color: #8fa47d;
+    background-color: ${(props) => { return (props.disabled ? "#d3d3d3" : "#8fa47d"); }};
   }
 
   &:active {
-    transform: scale(0.95);
-    background-color: #7b8f6c;
+    transform: ${(props) => { return (props.disabled ? "none" : "scale(0.95)"); }};
+    background-color: ${(props) => { return (props.disabled ? "#d3d3d3" : "#7b8f6c"); }};
   }
 `;
 
@@ -92,9 +93,18 @@ const BoldText = styled.div`
 const LoginSecond = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate(); // 페이지 이동을 위한 useNavigate 사용
 
   const clearUsername = () => { return setUsername(""); };
   const clearPassword = () => { return setPassword(""); };
+
+  const isFormValid = username && password; // 아이디와 비밀번호가 모두 입력되었는지 확인
+
+  const handleLogin = () => {
+    if (isFormValid) {
+      navigate("/main"); // main 페이지로 이동
+    }
+  };
 
   return (
     <div>
@@ -118,7 +128,9 @@ const LoginSecond = () => {
           />
           {password && <ClearButton onClick={clearPassword}>×</ClearButton>}
         </InputContainer>
-        <LoginButton>로그인</LoginButton>
+        <LoginButton onClick={handleLogin} disabled={!isFormValid}>
+          로그인
+        </LoginButton>
         <TextContainer>
           <Text>아직 회원이 아니신가요?</Text>
           <BoldText>회원가입</BoldText>
