@@ -9,7 +9,6 @@ module.exports = {
     "eslint:recommended", // ESLint의 기본 추천 규칙
     "plugin:react/recommended", // React의 기본 추천 규칙
     "airbnb", // Airbnb 스타일 가이드
-    "plugin:prettier/recommended", // Prettier와 ESLint를 통합한 추천 규칙
   ],
   parserOptions: {
     ecmaFeatures: {
@@ -21,11 +20,8 @@ module.exports = {
   },
   plugins: [
     "react", // React 관련 linting 규칙을 사용
-    "prettier", // Prettier 관련 linting 규칙을 사용
   ],
   rules: {
-    // Prettier 규칙을 위반한 경우, ESLint에서 오류로 처리
-    "prettier/prettier": "error",
     // JSX에 React가 필요하지 않으므로 비활성화
     "react/react-in-jsx-scope": "off",
     // Stateless 함수형 컴포넌트를 권장하지 않으므로 비활성화
