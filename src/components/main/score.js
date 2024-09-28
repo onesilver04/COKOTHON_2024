@@ -19,11 +19,11 @@ const ScoreContainer = styled.div`
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
-  background-color: #e8cccb;
-  opacity: 55%;
+    background-color: rgba(232, 204, 203, 0.55);
   padding-left: 20px;
   padding-right: 20px;
   font-size: 30px;
+    
 `;
 
 const Score = () => {
@@ -66,7 +66,12 @@ const Score = () => {
           내 어휘력 순위
         </Link>
       </Text>
-      <ScoreContainer>상위 {rankPercent}% 입니다.</ScoreContainer>
+      <ScoreContainer>
+        상위
+        {" "}
+        {rankPercent}
+        % 입니다.
+      </ScoreContainer>
     </div>
   );
 };
