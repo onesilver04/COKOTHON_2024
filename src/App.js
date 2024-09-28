@@ -1,6 +1,7 @@
 import "./App.css";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import TestPage from "./pages/Test/testPage";
+import RankPage from "./pages/Test/rankPage";
 import NoteCard from "./pages/Test/Note/NoteCard";
 import Mypage from "./pages/Test/Mypage/Mypage"; // 마이페이지 임포트
 import Main from "./pages/Main/mainPage";
@@ -17,6 +18,7 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/test" element={<TestPage />} />
+          <Route path="/rank" element={<RankPage />} />
           <Route path="/note" element={<NoteCard />} />
           <Route path="/mypage" element={<Mypage />} />
           <Route path="/main" element={<Main />} />
