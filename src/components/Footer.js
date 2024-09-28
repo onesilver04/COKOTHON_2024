@@ -15,7 +15,7 @@ const Footer = ({ url }) => {
         <Link to={{ pathname: "/emailstart", state: { prevUrl: url } }}>
           <img src={MessageIcon} alt="hello" />
         </Link>
-        <Link to={{ pathname: "/quiz", state: { prevUrl: url } }}>
+        <Link to={{ pathname: "/quizstart", state: { prevUrl: url } }}>
           <img src={QuestionIcon} alt="hello" />
         </Link>
         <Link to={{ pathname: "/myPage", state: { prevUrl: url } }}>

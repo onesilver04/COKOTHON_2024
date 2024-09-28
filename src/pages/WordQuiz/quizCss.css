@@ -1,33 +1,33 @@
-.stopContainer :hover {
-  cursor: pointer;
+.stopContainer :hover{
+    cursor: pointer;
 }
-.stop {
-  background-color: #a5b68d;
-  width: 176px;
-  height: 56px;
-  border-radius: 12px;
-  border-width: 0px;
+.stop{
+    background-color: #A5B68D;
+    width: 176px;
+    height: 56px;
+    border-radius: 12px;
+    border-width: 0px;
 }
-.title {
-  margin-bottom: 10px;
-  font-size: 16px;
+.start{
+    background-color: #A5B68D;
+    width: 257px;
+    height: 65px;
+    border-radius: 12px;
+    border-width: 0px;
 }
-.two {
-  width: 20%;
+.iconContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 80px;
+    height: 480px;
 }
-.four {
-  width: 40%;
-}
-.six {
-  width: 60%;
-}
-.eight {
-  width: 80%;
-}
-.ten {
-  width: 100%;
-}
-.quiz1,
-.quiz2 :hover {
-  cursor: pointer;
+
+.two{width: 20%;}
+.four{width: 40%;}
+.six{width: 60%;}
+.eight{width: 80%;}
+.ten{width: 100%;}
+.quiz1, .quiz2 :hover{
+    cursor: pointer;
 }
