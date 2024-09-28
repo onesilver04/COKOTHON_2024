@@ -8,7 +8,7 @@ import Header from "../../../components/Header";
 const NoteCard = () => {
   return (
     <>
-      <Header title="오답 노트" />
+      <Header title="오답 노트" url="/mypage" />
       <div className="note-card-container">
         {dummy.map((item) => {
           return (

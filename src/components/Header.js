@@ -5,7 +5,7 @@ import "./Header.css";
 
 const Title = styled.div`
   font-size: 22px;
-    font-weight: 600;
+  font-weight: 600;
 `;
 
 const Header = ({ title, url }) => {
@@ -31,12 +31,11 @@ const Header = ({ title, url }) => {
           boxShadow: "0 2px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.005)",
         }}
       >
-        <img src={PreviousIcon} alt="Default" style={{ position: "absolute", left: "10px" }} className={(url === "null") ? "Test" : ""} />
         <Link to={url}>
           <img
             src={PreviousIcon}
             alt="Default"
-            style={{ position: "absolute", left: "10px" }}
+            style={{ position: "absolute", left: "10px", bottom: "20px" }}
             className={url === "null" ? "Test" : ""}
           />
         </Link>
