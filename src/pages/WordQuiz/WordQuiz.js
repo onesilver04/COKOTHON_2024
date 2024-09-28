@@ -1,18 +1,19 @@
 import styled from "styled-components";
-import './quizCss.css';
+import "./quizCss.css";
 import { Link } from "react-router-dom";
-import Footer from '../../components/Footer';
-import Header from '../../components/Header';
+import Footer from "../../components/Footer";
+import Header from "../../components/Header";
 // import { useState } from "react";
 
 const ProgressBar = styled.div`
-  width: 100%;
+  width: 40%;
   height: 30px;
   border-radius: 30px 0 0 30px;
   background-color: #c1cfa0;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 40px 10px;
 `;
 
 const quizContainerStyle = {
@@ -23,6 +24,7 @@ const quizContainerStyle = {
   flexDirection: "column",
   alignItems: "center",
   padding: "20px",
+  borderRadius: "12px",
 };
 
 const selectStyle = {
@@ -43,28 +45,50 @@ const resultStyle = {
   color: "Red",
   fontSize: "80px",
   alignItems: "center",
-//   visibility: "hidden",
+  //   visibility: "hidden",
 };
 
 const WordQuiz = () => {
-//   const[visible, setVisible] = useState(false); // 정답 띄우냐 안띄우냐
-//   const[result, setResult] = useState(false); // false: 오답, true: 정답
+  //   const[visible, setVisible] = useState(false); // 정답 띄우냐 안띄우냐
+  //   const[result, setResult] = useState(false); // false: 오답, true: 정답
   return (
     <div className="WordQuizPage">
       <Header title="맞춤법 퀴즈" url="/quizstart" />
       <ProgressBar className="two">
-        <h3>20</h3>
+        <div>20</div>
       </ProgressBar>
-      <div className="ProblemContainer" style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-        <h3 className="title">다음중 무엇이 맞는 표현인가요?</h3>
+      <div
+        className="ProblemContainer"
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
+        <div className="title">다음중 무엇이 맞는 표현인가요?</div>
         <div style={quizContainerStyle}>
-          <h3 className="quiz" style={{ marginTop: "40px", marginBottom: "20px" }}>이곳에 문제</h3>
+          <div
+            className="quiz"
+            style={{
+              marginTop: "40px",
+              marginBottom: "20px",
+              fontweight: "400",
+            }}
+          >
+            이곳에 문제
+          </div>
           <div style={{ display: "flex" }}>
-            <div className="quiz1" style={{ ...selectStyle, borderRadius: "12px" }}>
-              <h3>문제1</h3>
+            <div
+              className="quiz1"
+              style={{ ...selectStyle, borderRadius: "12px" }}
+            >
+              <div>문제1</div>
             </div>
-            <div className="quiz2" style={{ ...selectStyle, borderRadius: "12px" }}>
-              <h3>문제2</h3>
+            <div
+              className="quiz2"
+              style={{ ...selectStyle, borderRadius: "12px" }}
+            >
+              <div>문제2</div>
             </div>
           </div>
         </div>
@@ -73,8 +97,19 @@ const WordQuiz = () => {
       <div className="resultPage" style={resultStyle}>
         O
       </div>
-      <div className="stopContainer" style={{ display: "flex", justifyContent: "center" }}>
-        <Link to="/quizstart"><button className="stop" type="button" style={{ color: "white", fontSize: "20px" }}>그만풀기</button></Link>
+      <div
+        className="stopContainer"
+        style={{ display: "flex", justifyContent: "center" }}
+      >
+        <Link to="/quizstart">
+          <button
+            className="stop"
+            type="button"
+            style={{ color: "white", fontSize: "20px" }}
+          >
+            그만풀기
+          </button>
+        </Link>
       </div>
       <Footer url="/quiz" />
     </div>

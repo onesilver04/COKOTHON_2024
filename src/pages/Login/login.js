@@ -59,15 +59,12 @@ const Login = () => {
   return (
     <Container>
       <Text>
-        세상을 향한 종합적 성장
-        {" "}
-        <br />
+        세상을 향한 종합적 성장 <br />
         대학생 어휘 완성하기
       </Text>
       <Title>세종대완</Title>
       <Text>함께 시작해볼까요?</Text>
-      <LoginButton onClick={handleButtonClick}>시작하기</LoginButton>
-      {" "}
+      <LoginButton onClick={handleButtonClick}>시작하기</LoginButton>{" "}
       {/* 클릭 이벤트 추가 */}
     </Container>
   );

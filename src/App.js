@@ -11,6 +11,9 @@ import LoginSecond from "./pages/Login/loginSecond";
 import EmailGame from "./pages/EmailGame/EmailGame";
 import WordQuiz from "./pages/WordQuiz/WordQuiz";
 import WordQuizStart from "./pages/WordQuiz/WordQuizStart";
+import EmailGameResult from "./pages/EmailGame/EmailGameResult";
+import Register from "./pages/register";
+import EmailStart from "./pages/EmailGame/EmailStart";
 
 const App = () => {
   return (
@@ -30,6 +33,7 @@ const App = () => {
           <Route path="/email" element={<EmailGame />} />
           <Route path="/emailResult" element={<EmailGameResult />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/emailstart" element={<EmailStart />} />
         </Routes>
       </BrowserRouter>
     </div>

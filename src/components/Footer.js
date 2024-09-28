@@ -9,10 +9,18 @@ const Footer = ({ url }) => {
   return (
     <div>
       <div className="Home" style={{ backgroundColor: "white" }}>
-        <Link to="/main"><img src={HomeIcon} alt="hello" /></Link>
-        <Link to="/email"><img src={MessageIcon} alt="hello" /></Link>
-        <Link to="/quizStart"><img src={QuestionIcon} alt="hello" /></Link>
-        <Link to="/mypage"><img src={ProfileIcon} alt="hello" /></Link>
+        <Link to={{ pathname: "/main", state: { prevUrl: url } }}>
+          <img src={HomeIcon} alt="hello" />
+        </Link>
+        <Link to={{ pathname: "/emailstart", state: { prevUrl: url } }}>
+          <img src={MessageIcon} alt="hello" />
+        </Link>
+        <Link to={{ pathname: "/quizstart", state: { prevUrl: url } }}>
+          <img src={QuestionIcon} alt="hello" />
+        </Link>
+        <Link to={{ pathname: "/myPage", state: { prevUrl: url } }}>
+          <img src={ProfileIcon} alt="hello" />
+        </Link>
       </div>
     </div>
   );
