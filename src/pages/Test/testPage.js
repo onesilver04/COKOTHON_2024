@@ -1,9 +1,10 @@
 import React from "react";
+import Header from "../../components/Header";
 
 const TestPage = () => {
   return (
     <div>
-      <div> 안녕zzz </div>
+      <Header title="제목" />
     </div>
   );
 };
