@@ -1,0 +1,38 @@
+.ranking-image{
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+svg {
+  margin: 20px;
+  margin-bottom: 40px;
+}
+
+.ranking{
+  text-align: center;
+  /* background-color: antiquewhite; */
+}
+
+.ranking-container {
+  color: black;
+  font-size: 20px;
+  display: grid;
+  grid-row: repeat(1, auto);
+}
+
+.rank-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #EDE8DC;
+  height: 60px;
+  margin: 14px;
+  border-radius: 14px;
+  /* background-color: aqua; */
+}
+
+.rank-user-exp{
+  /* background-color: aqua; */
+  padding: 0 6px;
+}
