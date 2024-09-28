@@ -35,7 +35,7 @@ const Header = ({ title, url }) => {
           <img
             src={PreviousIcon}
             alt="Default"
-            style={{ position: "absolute", left: "10px" }}
+            style={{ position: "absolute", left: "10px", bottom: "20px" }}
             className={url === "null" ? "Test" : ""}
           />
         </Link>
