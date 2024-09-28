@@ -51,14 +51,16 @@ const RankPage = () => {
         <div className="ranking">
           <div className="ranking-container">
             <div>
-              {rankData.map((item) => (
-                <Rank
-                  key={item.rank} // 고유한 키를 설정
-                  rank={item.rank}
-                  username={item.name}
-                  userExp={item.exp}
-                />
-              ))}
+              {rankData.map((item) => {
+                return (
+                  <Rank
+                    key={item.rank} // 고유한 키를 설정
+                    rank={item.rank}
+                    username={item.name}
+                    userExp={item.exp}
+                  />
+                );
+              })}
             </div>
           </div>
         </div>

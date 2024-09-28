@@ -1,7 +1,7 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import PreviousIcon from "../assets/previousIcon.svg";
 import "./Header.css";
-import { Link } from "react-router-dom";
 
 const Title = styled.div`
   font-size: 22px;
