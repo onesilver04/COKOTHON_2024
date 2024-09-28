@@ -30,7 +30,7 @@ const EmailGame = () => {
 
   return (
     <>
-      <Header title="메일 보내기 게임" />
+      <Header title="메일 보내기 게임" url="/emailstart" />
       <div className="EmailGameBody">
         <div
           className="GameBody"
@@ -56,7 +56,7 @@ const EmailGame = () => {
             검사하기
           </button>
         </div>
-        <Footer />
+        <Footer url="/email" />
       </div>
     </>
   );

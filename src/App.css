@@ -1,16 +1,16 @@
 .App {
-    max-width: 480px;
-    margin: 0 auto;
-    min-height: 100vh;
-    max-height: 100vh;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    scrollbar-width: none;
-    width: auto;
-    position: relative;
-    word-break: keep-all;
+  max-width: 480px;
+  margin: 0 auto;
+  min-height: 100vh;
+  max-height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  width: auto;
+  position: relative;
+  word-break: keep-all;
 }
 
-body{
-    margin: 0;
+body {
+  margin: 0;
 }
