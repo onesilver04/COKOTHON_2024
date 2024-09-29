@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { useLocation } from "react-router-dom";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 
@@ -54,24 +55,31 @@ const Line = styled.div`
 `;
 
 const EmailGameResult = () => {
+  const location = useLocation(); // 현재 위치 정보를 가져옴
+  const {
+    title, content, score, output,
+  } = location.state || {};
+
   return (
     <div>
-      <Header title="메일보내기 게임" url="/email" />
+      <Header title="메일보내기 연습" url="/email" />
       <MainContainer>
         <Text>당신의 메일 점수는?</Text>
-        <Score>65 점</Score>
+        <Score>
+          {score}
+          {" "}
+          점
+        </Score>
 
-        <Title>세종대완이 추천하는 메일 예시입니다!</Title>
+        <Title>세종대완이 분석한 메일</Title>
         <MailContainer>
-          <MailTitle>
-            {" "}
-            시험 문의드립니다. 신소재공학과 20221234 홍길동
-          </MailTitle>
-          <Line />
+          {/* <MailTitle> */}
+          {/*  {" "} */}
+          {/*  시험 문의드립니다. 신소재공학과 20221234 홍길동 */}
+          {/* </MailTitle> */}
+          {/* <Line /> */}
           <MailText>
-            교수님 안녕하세요, 신소재공학과 20221234 홍길동입니다.
-            금속표면공학을 수강하며 좋은 수업을 듣고 저의 전공 지식을 발전시키는
-            좋은 기회를 얻을 수 있었습니다.
+            {output}
           </MailText>
         </MailContainer>
       </MainContainer>
