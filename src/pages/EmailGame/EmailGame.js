@@ -48,7 +48,7 @@ const EmailGame = () => {
 
   return (
     <>
-      <Header title="메일 보내기 게임" url="/emailstart" />
+      <Header title="메일 보내기 연습" url="/emailstart" />
       <div className="EmailGameBody">
         <div
           className="GameBody"
