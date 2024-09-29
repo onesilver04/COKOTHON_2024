@@ -3,12 +3,43 @@ import { Link } from "react-router-dom";
 import "./Mypage.css";
 import axios from "axios"; // axios 임포트
 import Note from "../../../components/Note"; // Note 컴포넌트 임포트
-import dummy from "../dummy"; // dummy 데이터를 임포트
+// import dummy from "../dummy"; // dummy 데이터를 임포트
 import Footer from "../../../components/Footer";
 import Header from "../../../components/Header";
 
 const Mypage = () => {
   const [userInfo, setUserInfo] = useState(null); // 유저 정보를 저장할 상태
+  const [wrongs, setWrongs] = useState([]);
+  useEffect(() => {
+    // 비동기 데이터를 가져오는 함수를 정의
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/v1/wrong-notes`, {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+            Accept: "application/json",
+          },
+          params: {
+            count: 5,
+          },
+          withCredentials: true,
+        });
+        console.log(response.data);
+        setWrongs(response.data);
+        // 필요한 경우, 상태 업데이트 등을 여기서 처리
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchData(); // 정의한 비동기 함수를 호출
+
+    // 클린업 함수 반환 (필요한 경우에만)
+    return () => {
+      // 컴포넌트가 언마운트될 때 실행되는 정리 작업
+      console.log("RankPage component unmounting...");
+    };
+  }, []);
 
   // 유저 정보를 가져오는 API 함수
   const getInfo = async () => {
@@ -73,13 +104,13 @@ const Mypage = () => {
             </Link>
           </div>
 
-          {dummy.map((item) => {
+          {wrongs.map((item) => {
             return (
               <Note
-                key={item.id}
-                wrong={item.wrong}
-                right={item.right}
-                define={item.define}
+                key={item.quizId}
+                wrong={item.answerIndex === 1 ? item.options[0] : item.options[1]}
+                right={item.answerIndex === 1 ? item.options[1] : item.options[0]}
+                define={item.question}
               />
             );
           })}

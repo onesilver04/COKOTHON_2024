@@ -38,26 +38,26 @@ const MailContainer = styled.div`
   overflow: auto;
 `;
 
-const MailTitle = styled.div`
-  font-size: 14px;
-  padding-bottom: 9px;
-`;
+// const MailTitle = styled.div`
+//   font-size: 14px;
+//   padding-bottom: 9px;
+// `;
 
 const MailText = styled.div`
   font-size: 14px;
   padding-top: 23px;
 `;
 
-const Line = styled.div`
-  background: #000000;
-  width: 328px;
-  height: 1px;
-`;
+// const Line = styled.div`
+//   background: #000000;
+//   width: 328px;
+//   height: 1px;
+// `;
 
 const EmailGameResult = () => {
   const location = useLocation(); // 현재 위치 정보를 가져옴
   const {
-    title, content, score, output,
+    score, output,
   } = location.state || {};
 
   return (
