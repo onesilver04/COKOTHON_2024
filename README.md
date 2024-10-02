@@ -1,10 +1,15 @@
-# Getting Started with Create React Appssssssss
+# 2024 3rd COKOTHON
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+DATE: 2024.09.28~29
 
-## Available Scripts
+TOPIC: Growth(성장)
 
-In the project directory, you can run:
+
+## Topic
+
+맞춤법을 어려워하는 사람들의 어휘력 성장과 특히 대학생들이 어려워하는 교수님께 보낼 메일 양식에 맞춰 미리 연습해볼 수 있는 기회를 준다.
+
+세종대완을 통해 어휘력 상승, 맞춤법 공부, 메일 양식 갖추기 능력을 얻을 수 있고, 개인의 성장을 목표로 할 수 있다.
 
 ### `npm start`
 
